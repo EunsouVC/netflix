@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Lume Netflix",
+  "version": "0.1.0",
+  "identifier": "io.lume.netflix.experimental",
+  "build": { "frontendDist": ".." },
+  "app": {
+    "windows": [],
+    "withGlobalTauri": false,
+    "security": { "capabilities": [], "csp": "default-src 'none'; style-src 'unsafe-inline'" }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis", "msi"],
+    "publisher": "Lume Experimental",
+    "category": "Entertainment",
+    "shortDescription": "Cliente experimental e independente da Netflix",
+    "longDescription": "Janela WebView2 dedicada à Netflix. Não é um aplicativo oficial. Reprodução DRM e resolução não são garantidas.",
+    "icon": ["../128x128.png", "../icon.ico"],
+    "windows": {
+      "webviewInstallMode": { "type": "downloadBootstrapper", "silent": true },
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": ["PortugueseBR", "English"],
+        "displayLanguageSelector": false,
+        "startMenuFolder": "Lume Netflix",
+        "compression": "lzma"
+      },
+      "wix": { "language": "pt-BR" }
+    }
+  }
+}
